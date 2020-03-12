@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<citizens>
+    <citizen>
+        <ssn>Z345T</ssn>
+        <firstname>Cheryl</firstname>
+        <lastname>Johnson</lastname>
+        <role>Manager</role>
+        <salary>12000</salary>
+    </citizen>
+    <citizen>
+        <ssn>Z446T</ssn>
+        <firstname>John</firstname>
+        <lastname>Smith</lastname>
+        <role>Employee</role>
+        <salary>1000</salary>
+    </citizen>
+    <citizen>
+        <ssn>Z335T</ssn>
+        <firstname>Justin</firstname>
+        <lastname>Claire</lastname>
+        <role>Senior Manager</role>
+        <salary>14000</salary>
+    </citizen>
+    <citizen>
+        <ssn>Z389T</ssn>
+        <firstname>Clark</firstname>
+        <lastname>Rick</lastname>
+        <role>Employee</role>
+        <salary>2000</salary>
+    </citizen>
+</citizens>

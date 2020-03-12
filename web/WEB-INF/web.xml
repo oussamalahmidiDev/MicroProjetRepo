@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
+           version="4.0">
+
+    <welcome-file-list>
+        <welcome-file>face.xhtml</welcome-file>
+    </welcome-file-list>
+
+
+    <servlet>
+        <servlet-name>Index</servlet-name>
+        <servlet-class>com.servlets.ServletIndex</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Index</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Register</servlet-name>
+        <servlet-class>com.servlets.ServletRegister</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Register</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>com.servlets.ServletLogin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>com.servlets.ServletHome</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Articles</servlet-name>
+        <servlet-class>com.servlets.ServletArticles</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Articles</servlet-name>
+        <url-pattern>/articles</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Paniers</servlet-name>
+        <servlet-class>com.servlets.ServletPaniers</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Paniers</servlet-name>
+        <url-pattern>/paniers</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Commandes</servlet-name>
+        <servlet-class>com.servlets.ServletCommandes</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Commandes</servlet-name>
+        <url-pattern>/commandes</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>XML</servlet-name>
+        <servlet-class>com.servlets.ServletXML</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>XML</servlet-name>
+        <url-pattern>/xml</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>Authenticated</filter-name> <!-- mandatory -->
+        <filter-class>com.filters.FilterAuthenticated</filter-class> <!-- mandatory -->
+    </filter>
+    <filter-mapping>
+        <filter-name>Authenticated</filter-name> <!-- mandatory -->
+        <url-pattern>/home</url-pattern> <!-- either url-pattern or servlet-name is mandatory -->
+        <servlet-name>Home</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Authenticated</filter-name> <!-- mandatory -->
+        <url-pattern>/paniers</url-pattern> <!-- either url-pattern or servlet-name is mandatory -->
+        <servlet-name>Paniers</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Authenticated</filter-name> <!-- mandatory -->
+        <url-pattern>/articles</url-pattern> <!-- either url-pattern or servlet-name is mandatory -->
+        <servlet-name>Articles</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Authenticated</filter-name> <!-- mandatory -->
+        <url-pattern>/commandes</url-pattern> <!-- either url-pattern or servlet-name is mandatory -->
+        <servlet-name>Commandes</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>Guest</filter-name> <!-- mandatory -->
+        <filter-class>com.filters.FilterGuest</filter-class> <!-- mandatory -->
+    </filter>
+    <filter-mapping>
+        <filter-name>Guest</filter-name> <!-- mandatory -->
+        <url-pattern>/web_war_exploded</url-pattern> <!-- either url-pattern or servlet-name is mandatory -->
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Guest</filter-name> <!-- mandatory -->
+        <url-pattern>/login</url-pattern> <!-- either url-pattern or servlet-name is mandatory -->
+        <servlet-name>Login</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Guest</filter-name> <!-- mandatory -->
+        <url-pattern>/register</url-pattern> <!-- either url-pattern or servlet-name is mandatory -->
+        <servlet-name>Register</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+
+
+    <context-param>
+
+        <param-name>db-username</param-name>
+        <param-value>root</param-value>
+    </context-param>
+
+    <context-param>
+
+        <param-name>db-password</param-name>
+        <param-value>oussama14</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>db-host</param-name>
+        <param-value>127.0.0.1</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>db-port</param-name>
+        <param-value>3336</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>db-name</param-name>
+        <param-value>microprojet</param-value>
+    </context-param>
+</web-app>
+
+
